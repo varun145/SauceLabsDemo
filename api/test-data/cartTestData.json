@@ -1,0 +1,67 @@
+{
+  "validCarts": [
+    {
+      "userId": 1,
+      "date": "2024-01-10",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 5
+        },
+        {
+          "productId": 2,
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "date": "2024-01-15",
+      "products": [
+        {
+          "productId": 3,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "invalidCarts": [
+    {
+      "userId": "invalid",
+      "date": "2024-01-10",
+      "products": []
+    },
+    {
+      "date": "2024-01-10",
+      "products": []
+    },
+    {
+      "userId": 1,
+      "products": []
+    },
+    {
+      "userId": 1,
+      "date": "2024-01-10"
+    }
+  ],
+  "updateCartData": {
+    "userId": 5,
+    "date": "2024-02-01",
+    "products": [
+      {
+        "productId": 10,
+        "quantity": 2
+      }
+    ]
+  },
+  "patchCartData": {
+    "products": [
+      {
+        "productId": 5,
+        "quantity": 10
+      }
+    ]
+  },
+  "dataDriverProducts": [1, 2, 3, 4, 5],
+  "userIds": [1, 2, 3, 4, 5]
+}

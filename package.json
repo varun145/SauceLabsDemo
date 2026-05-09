@@ -1,0 +1,26 @@
+{
+  "name": "playwright-cucumber-framework",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags '@Smoke'",
+    "test:test01": "cucumber-js --tags '@TCID_Test01'",
+    "test:api": "cd api && playwright test",
+    "test:api:positive": "cd api && playwright test tests/positive.spec.ts",
+    "test:api:negative": "cd api && playwright test tests/negative.spec.ts",
+    "test:api:auth": "cd api && playwright test tests/auth.spec.ts",
+    "test:api:schema": "cd api && playwright test tests/schema-validation.spec.ts",
+    "test:api:data-driven": "cd api && playwright test tests/data-driven.spec.ts",
+    "test:api:crud": "cd api && playwright test tests/crud.spec.ts",
+    "test:api:debug": "cd api && playwright test --debug",
+    "test:api:ui": "cd api && playwright test --ui"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.0",
+    "@playwright/test": "^1.54.0",
+    "@types/node": "^24.0.0",
+    "dotenv": "^16.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
