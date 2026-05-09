@@ -19,7 +19,7 @@ export class LoginPage extends BasePage {
     this.page = page;
     this.usernameInput = this.page.locator('#user-name');
     this.passwordInput = this.page.locator('#password');
-    this.loginButton = this.page.locator('#login-button');
+    this.loginButton = this.page.getByRole('button', { name: 'Login' });
     this.errorMessage = this.page.locator('[data-test="error"]');
     this.url = 'https://www.saucedemo.com/';
   }

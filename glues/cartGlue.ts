@@ -6,9 +6,9 @@ import { Locator } from '@playwright/test';
 
 export class CartGlue {
 
-  inventoryPage;
+  private inventoryPage: InventoryPage;
 
-  cartPage;
+  private cartPage: CartPage;
 
   constructor(page: any) {
 
@@ -18,37 +18,30 @@ export class CartGlue {
   }
 
   async addBackpackToCart() {
-
     await this.inventoryPage.addBackpackToCart();
   }
 
   async clickCartIcon() {
-
     await this.inventoryPage.clickCartIcon();
   }
 
   getCartProduct(): Locator {
-
     return this.cartPage.getCartProduct();
   }
 
   getCheckoutButton(): Locator {
-
     return this.cartPage.getCheckoutButton();
   }
 
   async removeProduct() {
-
     await this.cartPage.removeProduct();
   }
 
   getCartItems(): Locator {
-
     return this.cartPage.getCartItems();
   }
 
   getCartItemsContainer(): Locator {
-
     return this.cartPage.getCartItemsContainer();
   }
 }

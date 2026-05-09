@@ -18,35 +18,26 @@ export class LoginGlue {
   }
 
   async navigate() {
-
     await this.loginPage.navigate();
   }
 
   async login(username: string, password: string) {
-
-    await this.loginPage.login(
-      username,
-      password
-    );
+   await this.loginPage.login(username, password);  
   }
 
   getErrorMessage(): Locator {
-
-    return this.loginPage.getErrorMessage();
+   return this.loginPage.getErrorMessage();
   }
 
   getSwagLabsLogo(): Locator {
-
     return this.inventoryPage.getSwagLabsLogo();
   }
 
   getProductsHeader(): Locator {
-
-    return this.inventoryPage.getProductsHeader();
+   return this.inventoryPage.getProductsHeader();
   }
 
   getProducts(): Locator {
-
     return this.inventoryPage.getProducts();
   }
 }
