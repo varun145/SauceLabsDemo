@@ -7,21 +7,26 @@ import {
 import {
   chromium,
   Browser,
-  Page
+  Page,
+  BrowserContext
 } from '@playwright/test';
 
 setDefaultTimeout(60000);
 
 let browser: Browser;
+let context: BrowserContext;
 let page: Page;
 
 Before(async function () {
 
+  // Use headless mode - required for CI/CD environments
+  const isHeadless = process.env.CI === 'true' || process.env.HEADLESS !== 'false';
+
   browser = await chromium.launch({
-    headless: false
+    headless: isHeadless
   });
 
-  const context = await browser.newContext();
+  context = await browser.newContext();
 
   page = await context.newPage();
 
@@ -30,7 +35,15 @@ Before(async function () {
 
 After(async function () {
 
-  await page.close();
+  if (page) {
+    await page.close();
+  }
 
-  await browser.close();
+  if (context) {
+    await context.close();
+  }
+
+  if (browser) {
+    await browser.close();
+  }
 });
